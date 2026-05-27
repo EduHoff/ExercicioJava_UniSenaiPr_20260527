@@ -174,4 +174,44 @@ public class Recursion {
 
         return (double) soma_total / array.length;
     }
+
+    public static boolean is_simetrica(int[][] matriz){
+        int linhas = matriz.length;
+        int colunas = matriz[0].length;
+
+        if (linhas != colunas) return false;
+        
+        return is_simetrica(matriz, 0, 0, linhas, colunas);
+    }
+
+    private static boolean is_simetrica(int[][] matriz, int l, int c, int totalL, int totalC){
+
+        if(c >= totalC) return is_simetrica(matriz, l + 1, 0, totalL, totalC);
+
+        if(l >= totalL) return true;
+
+        if(matriz[l][c] != matriz[c][l]) return false;
+
+        return is_simetrica(matriz, l, c + 1, totalL, totalC);
+    }
+
+    public static int[][] transpor_matriz(int[][] matriz){
+        int linhas = matriz.length;
+        int colunas = matriz[0].length;
+        
+        int[][] transposta = new int[colunas][linhas]; 
+        
+        return transpor_matriz(matriz, transposta, 0, 0, linhas, colunas);
+    }
+
+    private static int[][] transpor_matriz(int[][] matriz, int[][] transposta, int l, int c, int totalL, int totalC){
+
+        if(c >= totalC) return transpor_matriz(matriz, transposta, l + 1, 0, totalL, totalC);
+
+        if(l >= totalL) return transposta;
+
+        transposta[c][l] = matriz[l][c];
+
+        return transpor_matriz(matriz, transposta, l, c + 1, totalL, totalC);
+    }
 }
