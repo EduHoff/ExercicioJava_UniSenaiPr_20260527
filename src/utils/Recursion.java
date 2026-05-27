@@ -86,4 +86,18 @@ public class Recursion {
         sb.append(str.charAt(acc));
         return inverter_str_tail(str, sb, acc-1);
     }
+
+    public static int multiplicacao_por_soma_sucessiva(int x, int y){
+        
+        if (y < 0) return multiplicacao_por_soma_sucessiva(-x, -y, 0);
+
+        return multiplicacao_por_soma_sucessiva(x, y, 0);
+    }
+
+    private static int multiplicacao_por_soma_sucessiva(int x, int y, int acc){
+
+        if (y == 0) return acc;
+
+        return multiplicacao_por_soma_sucessiva(x,y-1, acc+x);
+    }
 }
