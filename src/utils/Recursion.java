@@ -50,7 +50,7 @@ public class Recursion {
     public static void contagem_regressiva(int num){
         if(num < 0) throw new InputMismatchException("Número não pode ser negativo!");
 
-        System.out.println(num + "!");
+        System.out.println(num);
 
         if(num == 0) return;
         contagem_regressiva(num-1);
@@ -117,5 +117,16 @@ public class Recursion {
         if(n > m) return acc;
         
         return soma_por_intervalo(n+1, m, acc+n);
+    }
+
+    public static void ordem_crescente(int num){
+        ordem_crescente(num, 0);
+    }
+
+    private static void ordem_crescente(int num, int acc){
+        if(acc > num) return;
+
+        System.out.println(acc);
+        ordem_crescente(num, acc+1);
     }
 }
