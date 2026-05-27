@@ -33,4 +33,17 @@ public class Recursion {
 
         return fibonacciTail(pos, acc + 1, ult_num, penult_num + ult_num);
     }
+
+    public static int potencia(int x, int y){
+        if(y < 0) throw new InputMismatchException("Y não pode ser negativo!");
+        if(y == 0 && x == 0) throw new ArithmeticException("Impossível elevar 0 por 0");
+        return potenciaTail(x, y, 1);
+    }
+
+    private static int potenciaTail(int x, int y, int acc){
+        
+        if(y == 0) return acc;
+        
+        return potenciaTail(x, y-1, acc * x);
+    }
 }
