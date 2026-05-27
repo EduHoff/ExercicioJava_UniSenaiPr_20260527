@@ -120,13 +120,58 @@ public class Recursion {
     }
 
     public static void ordem_crescente(int num){
-        ordem_crescente(num, 0);
+        
+        if(num < 0) return;
+        
+        ordem_crescente(num-1);
+
+        System.out.println(num);
     }
 
-    private static void ordem_crescente(int num, int acc){
-        if(acc > num) return;
+    public static int somar_elementos_vetor(int[] array){
+        return somar_elementos_vetor(array, 0, 0);
+    }
 
-        System.out.println(acc);
-        ordem_crescente(num, acc+1);
+    private static int somar_elementos_vetor(int[] array, int index, int acc){
+
+        if(index >= array.length) return acc;
+
+        return somar_elementos_vetor(array, index+1, acc+array[index]);
+    }
+
+    public static int max_vetor(int[] array){
+        return max_vetor(array, 1, array[0]);
+    }
+
+    private static int max_vetor(int[] array, int index, int acc){
+        
+        if(index >= array.length) return acc;
+
+        if(array[index] > acc) acc = array[index];
+
+
+        return max_vetor(array, index+1, acc);
+    }
+
+    public static int min_vetor(int[] array){
+        return min_vetor(array, 1, array[0]);
+    }
+
+    private static int min_vetor(int[] array, int index, int acc){
+        
+        if(index >= array.length) return acc;
+
+        if(array[index] < acc) acc = array[index];
+
+
+        return min_vetor(array, index+1, acc);
+    }
+
+    public static double media_vetor(int[] array){
+        if (array.length == 0) return 0.0;
+
+        int soma_total = somar_elementos_vetor(array);
+
+        return (double) soma_total / array.length;
     }
 }
