@@ -6,17 +6,17 @@ import java.util.Scanner;
 import utils.ConsoleUtils;
 import utils.Recursion;
 
-public class Ex6 implements Exercise {
+public class Ex7 implements Exercise {
 
     @Override
     public void run(Scanner sc) {
-        System.out.println("--- Exercicío 6 ---");
+        System.out.println("--- Exercicío 7 ---");
 
         String str;
         sc.nextLine();
         while (true) {
             try{
-                System.out.println("Digite uma palavra para verificar se é um palíndromo:");
+                System.out.println("Digite uma palavra para inverter:");
                 System.out.print("||");
                 str = sc.nextLine();
                 break;
@@ -31,10 +31,8 @@ public class Ex6 implements Exercise {
         }
 
         ConsoleUtils.clear();
-        Boolean result = Recursion.is_palindromo(str);
-        if(result)
-            System.out.println(str + " é um palíndromo!");
-        else
-            System.out.println(str + " não é um palíndromo!");
+        String result = Recursion.inverter_str(str);
+        System.out.println("Palavra original : " + str);
+        System.out.println("Palavra invertida: " + result);
     }
 }

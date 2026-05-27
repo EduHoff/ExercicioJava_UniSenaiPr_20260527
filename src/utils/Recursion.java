@@ -64,7 +64,7 @@ public class Recursion {
         return is_palindromo_tail(str_tratado, 0, str_tratado.length()-1);
     }
 
-    public static boolean is_palindromo_tail(String str, int esq, int dir){
+    private static boolean is_palindromo_tail(String str, int esq, int dir){
 
         if(esq >= dir) return true;
 
@@ -74,4 +74,16 @@ public class Recursion {
             return false;
     }
 
+    public static String inverter_str(String str){
+        StringBuilder sb = new StringBuilder();
+        return inverter_str_tail(str, sb, str.length()-1);
+    }
+
+    private static String inverter_str_tail(String str, StringBuilder sb, int acc){
+        
+        if (acc < 0) return sb.toString();
+
+        sb.append(str.charAt(acc));
+        return inverter_str_tail(str, sb, acc-1);
+    }
 }

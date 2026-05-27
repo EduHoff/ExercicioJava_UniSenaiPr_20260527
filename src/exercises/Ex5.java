@@ -24,10 +24,6 @@ public class Ex5 implements Exercise {
                 ConsoleUtils.clear();
                 System.out.println("Digite apenas números inteiros positivos!\n");
                 sc.nextLine();
-            }catch(IndexOutOfBoundsException e){
-                ConsoleUtils.clear();
-                System.out.println("A posição precisa ser maior que zero!\n");
-                sc.nextLine();
             }catch(Exception e){
                 ConsoleUtils.clear();
                 e.printStackTrace();
