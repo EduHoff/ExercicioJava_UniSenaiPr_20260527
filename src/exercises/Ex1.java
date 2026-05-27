@@ -13,6 +13,7 @@ public class Ex1 implements Exercise {
         System.out.println("--- Exercicío 1 ---");
 
         int num = 0;
+        sc.nextLine();
         while (true) {
             try{
                 System.out.println("Digite um número natural para calcular o fatorial:");

@@ -13,6 +13,7 @@ public class Ex3 implements Exercise {
         System.out.println("--- Exercicío 3 ---");
 
         int pos = 1;
+        sc.nextLine();
         while (true) {
             try{
                 System.out.println("Digite qual posição da sequência de Fibonacci quer calcular o número:");

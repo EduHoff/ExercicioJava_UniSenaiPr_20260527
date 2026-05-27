@@ -56,4 +56,22 @@ public class Recursion {
         contagem_regressiva(num-1);
     }
 
+    public static boolean is_palindromo(String str){
+        String str_tratado = str.replaceAll("\\s", "").toLowerCase();
+
+        if (str_tratado.isEmpty()) return true;
+
+        return is_palindromo_tail(str_tratado, 0, str_tratado.length()-1);
+    }
+
+    public static boolean is_palindromo_tail(String str, int esq, int dir){
+
+        if(esq >= dir) return true;
+
+        if(str.charAt(esq) == str.charAt(dir)) 
+            return is_palindromo_tail(str, esq+1, dir-1);
+        else
+            return false;
+    }
+
 }

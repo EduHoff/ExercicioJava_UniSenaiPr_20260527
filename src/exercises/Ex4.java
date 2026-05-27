@@ -15,6 +15,7 @@ public class Ex4 implements Exercise {
         int x = 0;
         int y = 0;
 
+        sc.nextLine();
         while (true) {
             try {
                 System.out.println("Digite a base para calcular a potência:");
@@ -33,7 +34,7 @@ public class Ex4 implements Exercise {
         }
 
         ConsoleUtils.clear();
-
+        sc.nextLine();
         while (true) {
             try {
                 System.out.println("Digite o expoente para calcular a potência::");

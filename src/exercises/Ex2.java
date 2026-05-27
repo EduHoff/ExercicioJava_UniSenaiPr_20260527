@@ -13,6 +13,7 @@ public class Ex2 implements Exercise {
         System.out.println("--- Exercicío 2 ---");
 
         int num = 0;
+        sc.nextLine();
         while (true) {
             try{
                 System.out.println("Digite um número para calcular a soma dos n primeiros números naturais:");

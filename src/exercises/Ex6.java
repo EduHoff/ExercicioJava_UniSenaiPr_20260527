@@ -6,19 +6,19 @@ import java.util.Scanner;
 import utils.ConsoleUtils;
 import utils.Recursion;
 
-public class Ex5 implements Exercise {
+public class Ex6 implements Exercise {
 
     @Override
     public void run(Scanner sc) {
         System.out.println("--- Exercicío 5 ---");
 
-        int num = 0;
+        String str;
         sc.nextLine();
         while (true) {
             try{
-                System.out.println("Digite um número para começar a contagem regressiva:");
+                System.out.println("Digite uma palavra para verificar se é um palíndromo:");
                 System.out.print("||");
-                num = sc.nextInt();
+                str = sc.nextLine();
                 break;
             }catch(InputMismatchException e){
                 ConsoleUtils.clear();
@@ -35,6 +35,10 @@ public class Ex5 implements Exercise {
         }
 
         ConsoleUtils.clear();
-        Recursion.contagem_regressiva(num);
+        Boolean result = Recursion.is_palindromo(str);
+        if(result)
+            System.out.println(str + " é um palíndromo!");
+        else
+            System.out.println(str + " não é um palíndromo!");
     }
 }
